@@ -1,0 +1,430 @@
+@import config
+@import "blocks/**/*"
+
+.top-line
+    width: 100%
+    background: $accent
+    height: 100px
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    padding: 50px 
+    box-sizing: border-box 
+    box-shadow: 0px 3px 6px #C8C8C8
+    position: fixed
+    top: 0
+    @media screen and (max-width: $xs)
+        padding: 20px
+     
+    .logo
+        color: white
+        font-size: 42px
+        font-weight: 700
+        @media screen and (max-width: $xs)
+            font-size: 30px
+    .menu
+        list-style: none
+        display: flex
+        padding: 0
+        margin: 0
+        @media screen and (max-width: $sm)
+            display: none
+
+        li
+            margin-right: 30px
+            a
+                color: white
+                text-decoration: none
+                font-size: 20px
+                transition: all .5s ease
+                &:hover
+                    color: $secondary
+    .mob-menu
+        width: 30px
+        height: 30px
+        position: relative
+        @media screen and (max-width: $xl)
+            display: none
+        @media screen and (max-width: $xs)
+            display: block
+        &:after
+            content: ''
+            position: absolute
+            top: 0
+            width: 30px
+            height: 3px
+            background: #fff
+            transition: all .5s ease
+        &:before
+            content: ''
+            position: absolute
+            bottom: 0
+            width: 30px
+            height: 3px
+            background: #fff
+            transition: all .5s ease
+        span
+            position: absolute
+            top: 13px
+            width: 30px
+            height: 3px
+            background: #fff
+            transition: all .5s ease
+        &.clicked
+            &:after
+                opacity: 0
+            &:before
+                transform: rotate(45deg)
+                top: 10px
+            span
+                top: 10px
+                transform: rotate(-45deg)
+    .basket-icon
+        width: 50px
+        height: 50px
+        position: relative
+        background-image: url(../images/src/basket-icon.svg)
+        background-position: center
+        background-size: cover
+        @media screen and (max-width: $xs)
+            width: 30px
+            height: 30px
+        .basket-count
+            position: absolute
+            top: -10px
+            right: -13px
+            background: rgb176, 255, 87, 0.5
+            width: 25px
+            height: 25px
+            font-size: 15px
+            @include background-opacity($secondary, 0.5)
+            display: flex
+            justify-content: center
+            align-items: center
+            border-radius: 50%
+.slider-news
+    width: 1120px
+    margin: 140px auto 0
+    @media screen and (max-width: $xs)
+        display: none
+    .slider
+        display: flex
+        flex-direction:row
+        box-shadow: 0px 3px 6px #C8C8C8
+        border-radius: 20px
+        .info
+            width: 470px
+            height: 480px
+            background: $accent
+            box-sizing: border-box
+            color: white
+            padding: 50px
+            display: flex
+            flex-direction: column
+            border-radius: 20px 0px 0px 20px
+            h3
+                font-weight: 700
+                font-size: 40px
+            p
+                font-size: 20px
+                line-height: 26px
+            a
+                display: block
+                text-decoration: none
+                background: white
+                margin-top: 100px
+                padding: 20px
+                text-align: center
+                border-radius: 50px
+                width: 130px
+                transition: all .5s ease
+                &:hover
+                    background: $secondary
+        .slider-img
+            width: 690px
+            height: 480px
+            background-image: url(../images/src/slider.png)
+            background-size: cover
+            background-position: center
+            border-radius: 0 20px 20px 0
+
+.content
+    width: 1120px
+    margin: 40px auto
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    @media screen and (max-width: $xs)
+        width: 100%
+    aside
+        width: 250px
+        border: 2px solid $secondary
+        border-radius: 20px
+        overflow: hidden
+        @media screen and (max-width: $xs)
+            display: none
+        .categories
+            nav
+                ul
+                    list-style: none
+                    li
+                        border-bottom: 2px solid #fff
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        height: 20px
+                        padding: 20px
+                        background: #F2FFE4
+                        transition: all .5s ease
+                        &:hover
+                            background: $secondary 
+                    a
+                        display: block
+                        width: 100%
+                        color: $dark  
+                        text-decoration: none 
+                        font-weight: 700
+
+    main
+        width: 830px
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        @media screen and (max-width: $xs)
+            justify-content: center
+            margin-top: 100px
+        .product-card
+            width: 260px
+            margin-bottom: 20px
+            border-radius: 20px
+            box-shadow: 0px 3px 6px #C8C8C8
+            overflow: hidden
+            @media screen and (max-width: $xs)
+                width: 340px
+                margin-bottom: 30px
+            .product-image
+                height: 180px
+                width: 100%
+                background-image: url(../images/src/lemon.png)
+                background-size: cover
+                @media screen and (max-width: $xs)
+                    height: 220px
+            .product-info
+                padding: 20px
+                h3
+                    font-size: 20px
+                    font-weight: 700
+                .weight
+                    background: $secondary
+                    width: 50px
+                    height: 30px
+                    color: white
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    font-size: 16px
+                    border-radius: 5px
+                .price
+                    font-weight: 300
+                    font-size: 30px
+                    color: $secondary
+                .add-basket
+                    border: none
+                    background: $accent
+                    color: white
+                    display: block
+                    width: 100%
+                    padding: 20px 10px
+                    border-radius: 50px
+                    font-size: 17px
+                    font-weight: 300
+                    cursor: pointer
+                    transition: all .5s ease
+                    &:focus
+                        outline: none
+                    &:hover
+                        background-color: #268706
+
+.mobile-menu
+    position: fixed
+    top: 100px
+    width: 300px
+    height: 800px
+    background: $secondary
+    transition: all .3s ease
+    box-sizing: border-box
+    overflow: hidden
+    padding: 30px
+    left: -100%
+    overflow-y: scroll
+    &.opened
+        left: 0px
+        ul
+            list-style: none
+            li
+                margin-bottom: 20px
+                a
+                     color: $dark
+                     text-decoration: none
+                     border-bottom: 1px solid white
+                     display: block
+                     padding-bottom: 10px
+
+article
+    width: 1120px
+    margin: 0 auto
+    @media screen and (max-width: $xs)
+        width: 100%
+    h2
+         @media screen and (max-width: $xs)
+            text-align: center
+    .article-wrapper
+        width: 100%
+        display: flex
+        justify-content: space-between
+        flex-dorection: row
+        @media screen and (max-width: $xs)
+            flex-direction: column
+            justify-content: center
+            align-items: center
+        .article-item
+            width: 350px
+            margin-top: 40px
+            .article-img
+                width: 350px
+                height: 200px
+                background-image: url(../images/src/slider.png)
+                background-size: cover
+                background-position: center
+                border-radius: 10px
+            h3
+                font-size: 18px
+                line-height: 26px
+                margin-top: 20px
+                font-weight: 700
+            .article-date
+                font-size: 15px
+                margin-top: 10px
+.mini-basket
+    width: 300px
+    background: #fff
+    position: absolute
+    right: 10px
+    top: 70px
+    box-shadow: 0px 3px 6px #C8C8C8
+    border-radius: 10px
+    opacity: 0
+    transition: all .5s ease
+    box-sizing: border-box
+    padding: 20px 15px 0
+    &.open-basket
+        opacity: 1
+        top: 80px
+        z-index: 109
+    .mbasket-item
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding-bottom: 15px
+        border-bottom: 1px solid #e5e5e5
+        margin-top: 20px
+        .info
+            width: 150px
+            h3
+                line-height: 18px
+            .price
+                color: $accent
+                font-size: 20px
+        .thumb
+            width: 70px
+            height: 70px
+            background-image: url(../images/src/lemon.png)
+            background-size: cover
+            background-position: center
+            border-radius: 5px
+    .order-link
+        width: 220px
+        background: $accent
+        padding: 15px
+        border-radius: 50px
+        color: white
+        text-decoration: none
+        display: block
+        margin: 20px auto
+        text-align: center
+
+footer
+    width: 100%
+    height: 200px
+    margin-top: 50px
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    color: white
+    background: $accent
+.about-fruit
+    margin-top: 150px
+    .container
+        width: 1120px
+        margin: 0 auto
+        ul
+            list-style: none
+            li
+                display: inline-block
+            a
+                text-decoration: none
+        .fruit-wrapper
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            margin-top: 40px
+            .good-info
+                width: 600px
+                color: $dark
+                h3
+                    font-size: 40px
+                    line-height: 50px
+                p
+                    font-size: 17px
+                    line-height: 24px
+                    width: 600px
+                .good-footer
+                    display: flex
+                    width: 400px
+                    flex-direction: row
+                    justify-content: space-between
+                    button
+                        border: none
+                        background-color: $accent
+                        padding: 20px 40px
+                        color: white
+                        font-size: 20px
+                        border-radius: 50px
+                        display: block
+                    .inner-weight
+                        width: 60px
+                        font-size: 20px
+                        background: $secondary
+                        color: white
+                        border-radius: 5px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        display: flex
+                        justify-self: flex-end
+                    .inner-price
+                        color: $accent
+                        font-size: 40px
+                    
+
+
+
+        
+                   
+
+
+
+
+
