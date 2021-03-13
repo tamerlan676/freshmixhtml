@@ -315,10 +315,12 @@ article
     box-shadow: 0px 3px 6px #C8C8C8
     border-radius: 10px
     opacity: 0
+    display: none
     transition: all .5s ease
     box-sizing: border-box
     padding: 20px 15px 0
     &.open-basket
+        display: block
         opacity: 1
         top: 80px
         z-index: 109
@@ -511,6 +513,114 @@ footer
                         outline: none
                     &:hover
                         background-color: #268706
+.basket-page
+    width: 1120px
+    margin: 200px auto
+    @media screen and (max-width: $xs)
+        width: 100%
+        padding: 10px
+        margin-top: 130px
+    .main-basket
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        @media screen and (max-width: $xs)
+            flex-direction: column
+        .basket-info
+            width: 800px
+            margin-top: 10px
+            @media screen and (max-width: $xs)
+                width: 100%
+            .basket-item
+                display: flex
+                flex-direction: row
+                justify-content: space-between
+                align-items: center
+                margin-bottom: 10px
+                background: #F9F9F9
+                padding: 20px
+                .basket-ava
+                    width: 130px
+                    height: 100px
+                    overflow: hidden
+                    @media screen and (max-width: $xs)
+                        display: none
+                    img
+                        object-fit: cover
+                        width: 130px
+                .basket-details
+                    width: 300px
+                    @media screen and (max-width: $xs)
+                        width: 100%
+                    h3
+                        line-height: 24px
+                        font-size: 24px
+                        color: $dark
+                        @media screen and (max-width: $xs)
+                            font-size: 18px
+                    .price-weight
+                        color: $accent
+                        font-weight: 300
+                        font-size: 20px
+                        margin-top: 10px
+                        @media screen and (max-width: $xs)
+                            display
+                        span
+                            color: $dark
+                .basket-calc
+                    border-right: 1px solid #e5e5e5
+                    padding-right: 20px 
+                    input
+                        width: 40px
+                        height: 30px
+                        font-size: 18px
+                        padding-right: 0
+                        text-align: center
+                .basket-price
+                    font-size: 30px
+                    color: $accent
+                    border-right: 1px solid #e5e5e5
+                    padding-right: 20px 
+                    @media screen and (max-width: $xs)
+                        font-size: 18px
+                        width: 110px
+                        padding-left: 10px
+                .basket-del
+                    img
+                        @media screen and (max-width: $xs)
+                            width: 30px
+                            padding-left: 10px
+    .count
+        background: #f9f9f9
+        width: 300px   
+        height: fit-content
+        padding: 20px
+        box-sizing: border-box
+        margin-top: 10px
+        @media screen and (max-width: $xs)
+            width: 100%
+        h3
+            text-align: center
+        .count-stroke
+            display: flex
+            justify-content: space-between
+            margin-top: 10px
+            p
+                margin: 0
+            span
+                color: $accent
+                font-weight: bold 
+        a
+            display: block
+            text-align: center
+            background: $accent
+            padding: 15px
+            margin-top: 20px
+            color: white
+            text-decoration: none
+            border-radius: 50px
+
+
 
 
         
